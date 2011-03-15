@@ -1,5 +1,9 @@
 /* Author: 
     Ryan Gibbons ( rtgibbons )
+
+    Read ahead at your own risk. 
+
+    Code Below known to cause permanent brain damage
 */
 $(function() {
 $(document).ready(function(){

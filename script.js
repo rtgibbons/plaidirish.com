@@ -17,6 +17,28 @@ $(document).ready(function(){
 			e.stopImmediatePropagation();
 			e.preventDefault();
 		}
+        var pic = $(this).parent();
+        if (pic.data('zoom') != 1) {
+            $(this).css({
+                'width': '512px',
+                'height': '512px'
+            });
+            pic.css({
+                '-moz-transform': 'rotate(0deg)',
+                '-webkit-transform': 'rotate(0deg)',
+                'width': '512px',
+                'height': '512px',
+                'top': '10px',
+                'border-width': '18px 18px 72px 18px',
+            });
+            var img = pic.find('img');
+            img.attr('src', img.attr('src').replace('/i/s/','/i/l/'));
+            pic.data('zoom', 1);
+        } else {
+            throwAround(pic);
+            pic.data('zoom', 0);
+        }
+
 	});
 
 	$(".pic").draggable({
@@ -50,28 +72,8 @@ $(document).ready(function(){
 			$(e.target).css({zIndex:maxZ+1});
 		}
 		else $(e.target).closest('.pic').css({zIndex:maxZ+1});
+    });
 
-        if (pic.data('zoom') != 1) {
-            pic.css('-moz-transform','rotate(0deg)');
-            pic.css('-webkit-transform','rotate(0deg)');
-
-        
-            pic.css({
-                'width': '512px',
-                'height': '512px',
-                'top': '10px',
-                'border-width': '18px 18px 72px 18px',
-            });
-            pic.data('zoom', 1);
-        } else {
-            throwAround(pic);
-            pic.data('zoom', 0);
-        }
-
-        var i = $(this).find('img');
-        i.attr('src', i.attr('src').replace('/i/s/','/i/l/'));
-
-	})
 /* not yet
 	/* Converting all the links to a fancybox gallery **
 	$("a.fancybox").fancybox({
@@ -113,13 +115,13 @@ $(document).ready(function(){
 	}*/
 
     function throwAround(me) {
-        var left = Math.floor(Math.random() * 800) + 10;
-        var top = Math.floor(Math.random() * 400);
+        var left = Math.floor(Math.random() * ($(window).width() - 256));
+        var top = Math.floor(Math.random() * ($(window).height() - 256));
         var rot = Math.floor(Math.random() * 81) - 40;
 
         var i = me.find('img');
-        console.log(i.attr('src').replace('/i/l/','/i/s/'));
-        console.log(i.attr('src', i.attr('src').replace('/i/l/','/i/s/')));
+        i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
+
         me.animate({
             left: left + 'px',
             width: '128px',
@@ -131,7 +133,13 @@ $(document).ready(function(){
             borderTopWidth: '6px',
             borderLeftWidth: '6px'
         }, 250, function() { 
+            var pica = me.find('a');
+            pica.css ({
+                width: '128px',
+                height: '128px'
+            });
         });
+
 
     }
 });

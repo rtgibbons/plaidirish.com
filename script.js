@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 	$('.pic').mousedown(function(e){
 		/* Executed on image click */
-		var maxZ = 0;
+		var maxZ = 0, pic = $(this);
 
 		/* Find the max z-index property: */
 		$('.pic').each(function(){
@@ -51,23 +51,27 @@ $(document).ready(function(){
 		}
 		else $(e.target).closest('.pic').css({zIndex:maxZ+1});
 
-        $(this).css('-moz-transform','rotate(0deg)');
-        $(this).css('-webkit-transform','rotate(0deg)');
+        if (pic.data('zoom') != 1) {
+            pic.css('-moz-transform','rotate(0deg)');
+            pic.css('-webkit-transform','rotate(0deg)');
 
-    
-        $(this).css({
-            'width': '512px',
-            'height': '512px',
-            'top': '10px',
-            'border-width': '18px 18px 72px 18px',
-        });
+        
+            pic.css({
+                'width': '512px',
+                'height': '512px',
+                'top': '10px',
+                'border-width': '18px 18px 72px 18px',
+            });
+            pic.data('zoom', 1);
+        } else {
+            throwAround(pic);
+            pic.data('zoom', 0);
+        }
 
         var i = $(this).find('img');
         i.attr('src', i.attr('src').replace('/i/s/','/i/l/'));
 
-	}).mouseup(function(e){
-        throwAround($(this));
-    });
+	})
 /* not yet
 	/* Converting all the links to a fancybox gallery **
 	$("a.fancybox").fancybox({
@@ -109,16 +113,13 @@ $(document).ready(function(){
 	}*/
 
     function throwAround(me) {
-        //me.find('a').css('width','128px').css('height','128px');
-
         var left = Math.floor(Math.random() * 800) + 10;
         var top = Math.floor(Math.random() * 400);
         var rot = Math.floor(Math.random() * 81) - 40;
-        //me.css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
-        //me.css('-webkit-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
 
         var i = me.find('img');
-        i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
+        console.log(i.attr('src').replace('/i/l/','/i/s/'));
+        console.log(i.attr('src', i.attr('src').replace('/i/l/','/i/s/')));
         me.animate({
             left: left + 'px',
             width: '128px',

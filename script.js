@@ -5,11 +5,7 @@ $(function() {
 $(document).ready(function(){
     //set random position and angle
     $(".pic").each(function() { 
-        left = Math.floor(Math.random() * (950 - 128));
-        top = Math.floor(Math.random() * (550 - 128));
-        rot = Math.floor(Math.random() * 81) - 40;
-        $(this).css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
-        
+       throwAround($(this)); 
     });
 	// Executed once all the page elements are loaded
 	var preventClick=false;
@@ -116,6 +112,7 @@ $(document).ready(function(){
         var top = Math.floor(Math.random() * 400);
         var rot = Math.floor(Math.random() * 81) - 40;
         me.css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
+        me.css('-webkit-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
     }
 });
 

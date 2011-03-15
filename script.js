@@ -110,7 +110,7 @@ $(document).ready(function(){
         me.css('width','128px').css('height','128px');
         me.find('a').css('width','128px').css('height','128px');
         var i = me.find('img');
-        i.attr('src', i.attr('src').replace('/i/s/','/i/l/'));
+        i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
 
         var left = Math.floor(Math.random() * 950);
         var top = Math.floor(Math.random() * 400);

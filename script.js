@@ -116,7 +116,7 @@ $(document).ready(function(){
 
     function throwAround(me) {
         var left = Math.floor(Math.random() * ($(window).width() - 256));
-        var top = Math.floor(Math.random() * ($(window).height() - 256));
+        var top = Math.floor(Math.random() * ($(window).height() - 256)) + 125;
         var rot = Math.floor(Math.random() * 81) - 40;
 
         var i = me.find('img');

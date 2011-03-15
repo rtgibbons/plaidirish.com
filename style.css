@@ -170,9 +170,6 @@ a:hover { color: #036; }
 html, body,  #container, #main, #plaidirish {
     height:100%
 }
-body {
-}
-
 #main {
     margin: 25px;
 }
@@ -185,6 +182,18 @@ body{
     background-color:#444;
 }
 
+h1 {
+    font-size: 6em;
+    line-height: 1.5;
+    text-align: center;
+    cursor: default;
+    font-family: 'Coming Soon', arial, serif; 
+    text-shadow: 1px 1px 0px black, 2px 2px 0px #476871, 3px 3px 0px #476871, 4px 4px 0px #476871, 5px 5px 0px #476871, 6px 6px 0px #476871, 7px 7px 0px #476871;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+    
+}
 #plaidirish{
 	/* The pics container */
 	width:100%;

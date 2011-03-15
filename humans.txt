@@ -12,6 +12,7 @@
   Names (& URL): 
   
   Paul Irish ( http://paulirish.com/ )
+  "Cowboy" Ben Alman ( http://benalman.com/ )
   voodootikigod, garowetz, fearphage, christopherjacob, mathias byenens, daniel harttman, rse, chris dary, erik dahlstrom, timwillison, kenneth nordahl, riddle, elcuervo, andreas kuckartz, 3rdEden, riley willis, majic3 ( voodootikigod, garowetz, fearphage, christopherjacob, mathias byenens, daniel harttman, rse, chris dary, erik dahlstrom, timwillison, kenneth nordahl, riddle, elcuervo, andreas kuckartz, 3rdEden, riley willis, majic3 ( https://github.com/paulirish/html5-boilerplate )
   Martin Angelov ( http://tutorialzine.com/2009/11/hovering-gallery-css3-jquery/ )
 

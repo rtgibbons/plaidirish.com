@@ -55,8 +55,13 @@ $(document).ready(function(){
         $(this).css('-webkit-transform','rotate(0deg)');
 
     
-        $(this).css('width','512px').css('height','512px').css('top','10px');
-        $(this).find('a').css('width','512px').css('height','512px');
+        $(this).css({
+            'width': '512px',
+            'height': '512px',
+            'top': '10px',
+            'border-width': '18px 18px 72px 18px',
+        });
+
         var i = $(this).find('img');
         i.attr('src', i.attr('src').replace('/i/s/','/i/l/'));
 
@@ -106,7 +111,7 @@ $(document).ready(function(){
     function throwAround(me) {
         //me.find('a').css('width','128px').css('height','128px');
 
-        var left = Math.floor(Math.random() * 835);
+        var left = Math.floor(Math.random() * 800) + 10;
         var top = Math.floor(Math.random() * 400);
         var rot = Math.floor(Math.random() * 81) - 40;
         //me.css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
@@ -115,11 +120,15 @@ $(document).ready(function(){
         var i = me.find('img');
         i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
         me.animate({
-            width:'128',
+            left: left + 'px',
+            width: '128px',
             height:'128px',
             rotate: rot +'deg',
             top: top + 'px',
-            left: left + 'px'
+            borderBottomWidth: '26px',
+            borderRightWidth: '6px',
+            borderTopWidth: '6px',
+            borderLeftWidth: '6px'
         }, 250, function() { 
         });
 

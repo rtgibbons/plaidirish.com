@@ -104,16 +104,25 @@ $(document).ready(function(){
 	}*/
 
     function throwAround(me) {
-        me.css('width','128px').css('height','128px');
-        me.find('a').css('width','128px').css('height','128px');
-        var i = me.find('img');
-        i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
+        //me.find('a').css('width','128px').css('height','128px');
 
-        var left = Math.floor(Math.random() * 950);
+        var left = Math.floor(Math.random() * 835);
         var top = Math.floor(Math.random() * 400);
         var rot = Math.floor(Math.random() * 81) - 40;
-        me.css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
-        me.css('-webkit-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
+        //me.css('-moz-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
+        //me.css('-webkit-transform', 'rotate(' + rot+'deg)').css('top',top+'px').css('left',left+'px');
+
+        var i = me.find('img');
+        i.attr('src', i.attr('src').replace('/i/l/','/i/s/'));
+        me.animate({
+            width:'128',
+            height:'128px',
+            rotate: rot +'deg',
+            top: top + 'px',
+            left: left + 'px'
+        }, 250, function() { 
+        });
+
     }
 });
 

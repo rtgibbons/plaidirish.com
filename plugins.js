@@ -60,3 +60,13 @@ b.fn.mousewheel&&f.bind("mousewheel.fb",function(a,c){if(h)a.preventDefault();el
 b.fn.fancybox.defaults={padding:10,margin:40,opacity:false,modal:false,cyclic:false,scrolling:"auto",width:560,height:340,autoScale:true,autoDimensions:true,centerOnScroll:false,ajax:{},swf:{wmode:"transparent"},hideOnOverlayClick:true,hideOnContentClick:false,overlayShow:true,overlayOpacity:0.7,overlayColor:"#777",titleShow:true,titlePosition:"float",titleFormat:null,titleFromAlt:false,transitionIn:"fade",transitionOut:"fade",speedIn:300,speedOut:300,changeSpeed:300,changeFade:"fast",easingIn:"swing",
 easingOut:"swing",showCloseButton:true,showNavArrows:true,enableEscapeButton:true,enableKeyboardNav:true,onStart:function(){},onCancel:function(){},onComplete:function(){},onCleanup:function(){},onClosed:function(){},onError:function(){}};b(document).ready(function(){b.fancybox.init()})})(jQuery);
 
+/* 
+ * JQuery CSS Rotate property using CSS3 Transformations
+ * Copyright (c) 2011 Jakub Jankiewicz  <http://jcubic.pl>
+ * licensed under the LGPL Version 3 license.
+ * http://www.gnu.org/licenses/lgpl.html
+ */
+(function($){function getTransformProperty(element){var properties=['transform','WebkitTransform','MozTransform','msTransform','OTransform'];var p;while(p=properties.shift()){if(element.style[p]!==undefined){return p;}}
+return false;}
+$.cssHooks['rotate']={get:function(elem,computed,extra){var property=getTransformProperty(elem);if(property){return elem.style[property].replace(/.*rotate\((.*)deg\).*/,'$1');}else{return'';}},set:function(elem,value){var property=getTransformProperty(elem);if(property){value=parseInt(value);$(elem).data('rotatation',value);if(value==0){elem.style[property]='';}else{elem.style[property]='rotate('+value%360+'deg)';}}else{return'';}}};$.fx.step['rotate']=function(fx){$.cssHooks['rotate'].set(fx.elem,fx.now);};})(jQuery);
+

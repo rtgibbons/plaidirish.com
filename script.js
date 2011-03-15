@@ -52,6 +52,7 @@ $(document).ready(function(){
 		else $(e.target).closest('.pic').css({zIndex:maxZ+1});
 
         $(this).css('-moz-transform','rotate(0deg)');
+        $(this).css('-webkit-transform','rotate(0deg)');
 
     
         $(this).css('width','512px').css('height','512px').css('top','10px');

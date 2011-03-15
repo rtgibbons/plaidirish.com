@@ -28,7 +28,7 @@ $(document).ready(function(){
                 '-webkit-transform': 'rotate(0deg)',
                 'width': '512px',
                 'height': '512px',
-                'top': '10px',
+                'top': '125px',
                 'border-width': '18px 18px 72px 18px',
             });
             var img = pic.find('img');

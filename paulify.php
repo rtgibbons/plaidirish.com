@@ -1,7 +1,7 @@
 <?php
 
   $files = array();
-  $path = 'i/s/';
+  $path = 'i/m/';
 
   if ( $dir = opendir( $path ) ) {
     while ( false !== ( $file = readdir( $dir ) ) ){

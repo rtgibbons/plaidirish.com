@@ -10,7 +10,6 @@
         case 'image/jpg':
         case 'image/png':
         case 'image/gif':
-        case 'iamge/bmp':
           $files[] = $path . $file;
           break;
       }

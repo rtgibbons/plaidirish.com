@@ -2,7 +2,7 @@
 
 ##About
 
-On 2001-03-11 @cowboy decided to get some images stirred up putting @paul\_irish on plaid .. who would even think such a thing. #plaidirish
+On 2011-03-11 @cowboy decided to get some images stirred up putting @paul\_irish on plaid .. who would even think such a thing. #plaidirish
 
 I was browsing some CSS3 Galleries, found a good one using a polaroid style desk; though of this ... and then came plaidirish.com
 
